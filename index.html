@@ -1,77 +1,158 @@
 <!DOCTYPE html>
 <html>
-<title>Portfolio</title>
+<title>Portfolio - Alvin Pratama</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"> -->
+<link rel="stylesheet" type="text/css" href="assets/fm/font-montserrat.css">
+<link rel="stylesheet" href="assets/fa/font-awesome.min.css">
+<script src="assets/js/jquery-3.5.0.js"></script>
 <style>
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
+.a-row-padding img {margin-bottom: 12px}
 .bgimg {
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url('images/profile_girl.jpg');
+  /*background-size: cover;*/
+  background-image: url('images/4Q5A0866 p.png');
+  /*filter: grayscale(50%);*/
   min-height: 100%;
 }
 </style>
-<body>
+
+<style type="text/css">
+.flip-box {
+  background-color: transparent;
+  /*width: 100%;*/
+  /*height: 200px;*/
+  /*border: 1px solid #f1f1f1;*/
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-box-back {
+  background-color: #555;
+  color: white;
+  transform: rotateY(180deg);
+}
+</style>
+<body oncontextmenu="return false">
 
 <!-- Sidebar with image -->
-<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+<nav class="a-sidebar a-hide-medium a-hide-small" style="width:40%">
   <div class="bgimg"></div>
 </nav>
 
 <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
-<nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
-  <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+<nav class="a-sidebar a-black a-animate-right a-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="closeNav()" class="a-button a-black a-xxxlarge a-display-topright" style="padding:0 12px;">
     <i class="fa fa-remove"></i>
   </a>
-  <div class="w3-bar-block w3-center">
-    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Portfolio</a>
-    <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+  <div class="a-bar-block a-center">
+    <a href="#" class="a-bar-item a-button a-text-grey a-hover-black" onclick="closeNav()">Home</a>
+    <a href="#portfolio" class="a-bar-item a-button a-text-grey a-hover-black" onclick="closeNav()">Portfolio</a>
+    <a href="#about" class="a-bar-item a-button a-text-grey a-hover-black" onclick="closeNav()">About</a>
+    <a href="#contact" class="a-bar-item a-button a-text-grey a-hover-black" onclick="closeNav()">Contact</a>
   </div>
 </nav>
 
 <!-- Page Content -->
-<div class="w3-main w3-padding-large" style="margin-left:40%">
+<div class="a-main a-padding-large" style="margin-left:40%">
 
   <!-- Menu icon to open sidebar -->
-  <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+  <span class="a-button a-top a-white a-xxlarge a-text-grey a-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
 
   <!-- Header -->
-  <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-    <h1 class="w3-jumbo"><b>Alvin Pratama</b></h1>
+  <header class="a-container a-center" style="padding:128px 16px" id="home">
+    <h1 class="a-jumbo"><b>Alvin Pratama</b></h1>
     <p>Programmer and Web Designer.</p>
-    <img src="images/profile_girl.jpg" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
-    <img src="images/profile_girl.jpg" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
-    <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
+    <img src="images/4Q5A0866 p.png" class="a-image a-hide-large a-hide-small a-round" style="display:block;width:60%;margin:auto;">
+    <img src="images/4Q5A0866 p.png" class="a-image a-hide-large a-hide-medium a-round" width="1000" height="1333">
+    <!-- <button class="a-button a-light-grey a-padding-large a-margin-top">
       <i class="fa fa-download"></i> Download Resume
-    </button>
+    </button> -->
   </header>
 
   <!-- Portfolio Section -->
-  <div class="w3-padding-32 w3-content" id="portfolio">
-    <h2 class="w3-text-grey">My Portfolio</h2>
-    <hr class="w3-opacity">
+  <div class="a-padding-32 a-content" id="portfolio">
+    <h2 class="a-text-grey">My Portfolio Project</h2>
+    <hr class="a-opacity">
 
     <!-- Grid for photos -->
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half">
-        <img src="images/wedding.jpg" style="width:100%">
-        <img src="images/rocks.jpg" style="width:100%">
-        <img src="images/sailboat.jpg" style="width:100%">
+    <div class="a-row-padding">
+      <div class="a-half">
+        <div class="flip-box" style="width: 100%; height: 236px;">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <img src="images/Web capture_5-12-2022_8525_localhost.jpeg" style="width:100%;">
+            </div>
+            <div class="flip-box-back">
+              <h2>Simpedes</h2>
+              <p>Sistem Pelaporan Pemerintah Desa Bulanan Kalitengah</p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="flip-box" style="width: 100%; height: 345px;">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <img src="images/Web capture_5-12-2022_85257_localhost.jpeg" style="width:100%">
+            </div>
+            <div class="flip-box-back">
+              <h2>Simdes</h2>
+              <p>Sistem Pelaporan Surat Desa Jasem</p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <!-- <img src="images/Web capture_5-12-2022_8525_localhost.jpeg" style="width:100%">
+        <img src="images/Web capture_5-12-2022_85257_localhost.jpeg" style="width:100%"> -->
+        <!-- <img src="images/sailboat.jpg" style="width:100%"> -->
       </div>
 
-      <div class="w3-half">
-        <img src="images/underwater.jpg" style="width:100%">
-        <img src="images/chef.jpg" style="width:100%">
+      <div class="a-half">
+        <!-- <img src="images/S10126-112724.png" style="width:100%"> -->
+        <div class="flip-box" style="width: 100%; height: 661px;">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <img src="images/S10126-112724.png" style="width:100%">
+            </div>
+            <div class="flip-box-back">
+              <h2>Sistem Android</h2>
+              <p>Sistem Penjualan Pupuk dan Non Pupuk Online di PT. Petrokimia Gresik</p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <!-- <img src="images/chef.jpg" style="width:100%">
         <img src="images/wedding.jpg" style="width:100%">
-        <img src="images/p6.jpg" style="width:100%">
+        <img src="images/p6.jpg" style="width:100%"> -->
       </div>
     <!-- End photo grid -->
     </div>
@@ -79,144 +160,158 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   </div>
 
   <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
-    <h2>About</h2>
-    <hr class="w3-opacity">
-    <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing
-      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  <div class="a-content a-justify a-text-grey a-padding-32" id="about">
+    <h2>About Me</h2>
+    <hr class="a-opacity">
+    <!-- <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p> -->
+    <p>
+      Lulusan Universitas Muhammadiah Sidoarjo (UMSIDA) 2022 dengan predikat cumlaude jurusan Teknik Informatika. Aktif berperan dalam aktivitas keorganisasian mahasiswa. Memiliki pengalaman magang sebagai pembuat aplikasi program android di Perusahaan PT. Petrokimia Gresik departemen TI PI PG.
     </p>
-    <h3 class="w3-padding-16">My Skills</h3>
-    <p class="w3-wide">Photography</p>
-    <div class="w3-light-grey">
-      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:95%">95%</div>
-    </div>
-    <p class="w3-wide">Web Design</p>
-    <div class="w3-light-grey">
-      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:85%">85%</div>
-    </div>
-    <p class="w3-wide">Photoshop</p>
-    <div class="w3-light-grey">
-      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:80%">80%</div>
-    </div><br>
+    <br>
+    <h3 class="a-padding-16">My Skills</h3>
+    <p class="a-opacity">1. Desain Grafis</p>
+    <!-- <div class="a-light-grey">
+      <div class="a-container a-center a-padding-small a-dark-grey" style="width:95%">95%</div>
+    </div> -->
+    <p class="a-opacity">2. Editing Foto</p>
+    <!-- <div class="a-light-grey">
+      <div class="a-container a-center a-padding-small a-dark-grey" style="width:85%">85%</div>
+    </div> -->
+    <p class="a-opacity">3. Pemrograman Platform Web dan Android</p>
+    <!-- <div class="a-light-grey">
+      <div class="a-container a-center a-padding-small a-dark-grey" style="width:80%">80%</div>
+    </div><br> -->
+    <p class="a-opacity">4. Pengoperasian Linux/Unix OS</p>
+    <p class="a-opacity">5. Pengoperasian Microsoft Office</p>
+    <p class="a-opacity">6. Instalasi Windows dan Linux OS</p>
 
-    <div class="w3-row w3-center w3-dark-grey w3-padding-16 w3-section">
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">14+</span><br>
+    <!-- <div class="a-row a-center a-dark-grey a-padding-16 a-section">
+      <div class="a-quarter a-section">
+        <span class="a-xlarge">14+</span><br>
         Partners
       </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">55+</span><br>
+      <div class="a-quarter a-section">
+        <span class="a-xlarge">55+</span><br>
         Projects Done
       </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">89+</span><br>
+      <div class="a-quarter a-section">
+        <span class="a-xlarge">89+</span><br>
         Happy Clients
       </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">150+</span><br>
+      <div class="a-quarter a-section">
+        <span class="a-xlarge">150+</span><br>
         Meetings
       </div>
-    </div>
+    </div> -->
 
-    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+    <!-- <button class="a-button a-light-grey a-padding-large a-section">
       <i class="fa fa-download"></i> Download Resume
-    </button>
+    </button> -->
 
     <!-- Testimonials -->
-    <h3 class="w3-padding-24">My Reputation</h3>
-    <img src="images/avatar_smoke.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-text-black w3-margin-right">Chandler Bing.</span> Web Designer.</p>
+    <!-- <h3 class="a-padding-24">My Reputation</h3>
+    <img src="images/avatar_smoke.jpg" alt="Avatar" class="a-left a-circle a-margin-right" style="width:80px">
+    <p><span class="a-large a-text-black a-margin-right">Chandler Bing.</span> Web Designer.</p>
     <p>Jane Doe is just awesome. I am so happy to have met her!</p><br>
    
-    <img src="images/bandmember.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-text-black w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
+    <img src="images/bandmember.jpg" alt="Avatar" class="a-left a-circle a-margin-right" style="width:80px">
+    <p><span class="a-large a-text-black a-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
     <p>Jane Doe saved us from a web disaster.</p><br>
     
-    <img src="images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-text-black w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
-    <p>No one is better than Jane Doe.</p><br>
+    <img src="images/avatar_g2.jpg" alt="Avatar" class="a-left a-circle a-margin-right" style="width:80px">
+    <p><span class="a-large a-text-black a-margin-right">Rebecca Flex.</span> CEO at Company.</p>
+    <p>No one is better than Jane Doe.</p><br> -->
     
     <!-- Grid for pricing tables -->
-    <h3 class="w3-padding-16">My Price</h3>
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half w3-margin-bottom">
-        <ul class="w3-ul w3-center w3-card w3-hover-shadow">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
-          <li class="w3-padding-16">Web Design</li>
-          <li class="w3-padding-16">Photography</li>
-          <li class="w3-padding-16">5GB Storage</li>
-          <li class="w3-padding-16">Mail Support</li>
-          <li class="w3-padding-16">
+    <!-- <h3 class="a-padding-16">My Price</h3>
+    <div class="a-row-padding" style="margin:0 -16px">
+      <div class="a-half a-margin-bottom">
+        <ul class="a-ul a-center a-card a-hover-shadow">
+          <li class="a-dark-grey a-xlarge a-padding-32">Basic</li>
+          <li class="a-padding-16">Web Design</li>
+          <li class="a-padding-16">Photography</li>
+          <li class="a-padding-16">5GB Storage</li>
+          <li class="a-padding-16">Mail Support</li>
+          <li class="a-padding-16">
             <h2>$ 10</h2>
-            <span class="w3-opacity">per month</span>
+            <span class="a-opacity">per month</span>
           </li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          <li class="a-light-grey a-padding-24">
+            <button class="a-button a-white a-padding-large a-hover-black">Sign Up</button>
           </li>
         </ul>
       </div>
 
-      <div class="w3-half">
-        <ul class="w3-ul w3-center w3-card w3-hover-shadow">
-          <li class="w3-black w3-xlarge w3-padding-32">Pro</li>
-          <li class="w3-padding-16">Web Design</li>
-          <li class="w3-padding-16">Photography</li>
-          <li class="w3-padding-16">50GB Storage</li>
-          <li class="w3-padding-16">Endless Support</li>
-          <li class="w3-padding-16">
+      <div class="a-half">
+        <ul class="a-ul a-center a-card a-hover-shadow">
+          <li class="a-black a-xlarge a-padding-32">Pro</li>
+          <li class="a-padding-16">Web Design</li>
+          <li class="a-padding-16">Photography</li>
+          <li class="a-padding-16">50GB Storage</li>
+          <li class="a-padding-16">Endless Support</li>
+          <li class="a-padding-16">
             <h2>$ 25</h2>
-            <span class="w3-opacity">per month</span>
+            <span class="a-opacity">per month</span>
           </li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          <li class="a-light-grey a-padding-24">
+            <button class="a-button a-white a-padding-large a-hover-black">Sign Up</button>
           </li>
         </ul>
-      </div>
+      </div> -->
     <!-- End Grid/Pricing tables -->
-    </div>
+    <!-- </div> -->
     
   <!-- End About Section -->
   </div>
 
   <!-- Contact Section -->
-  <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
+  <div class="a-padding-32 a-content a-text-grey" id="contact" style="margin-bottom:64px">
     <h2>Contact Me</h2>
-    <hr class="w3-opacity">
+    <hr class="a-opacity">
 
-    <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Chicago, US</p>
-      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
-      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+    <div class="a-section">
+      <p><i class="fa fa-map-marker fa-fw a-xlarge a-margin-right"></i> Mojosari, Indonesia</p>
+      <p><i class="fa fa-phone fa-fw a-xlarge a-margin-right"></i>+62 95700226606</p>
+      <p><i class="fa fa-envelope fa-fw a-xlarge a-margin-right"></i>alinprama@gmail.com</p>
     </div>
+    <br>
     
     <!-- Image of location/map -->
-    <img src="images/map.jpg" class="w3-image w3-greyscale" style="width:100%;margin:32px 0">
+    <!-- <img src="images/map.jpg" class="a-image a-greyscale" style="width:100%;margin:32px 0"> -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7761.654878880544!2d112.57796192066381!3d-7.51908834672949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1670203329457!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
    
-    <p>Lets get in touch. Send me a message:</p>
+    <!-- <p>Lets get in touch. Send me a message:</p>
     <form action="action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p><input class="a-input a-padding-16 a-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="a-input a-padding-16 a-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="a-input a-padding-16 a-border" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="a-input a-padding-16 a-border" type="text" placeholder="Message" required name="Message"></p>
       <p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+        <button class="a-button a-light-grey a-padding-large" type="submit">
           <i class="fa fa-paper-plane"></i> SEND MESSAGE
         </button>
       </p>
-    </form>
+    </form> -->
   <!-- End Contact Section -->
   </div>  
   
   <!-- Footer -->
-  <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <footer class="a-container a-padding-64 a-light-grey a-center a-opacity a-xlarge" style="margin:-24px">
+    <i class="fa fa-facebook-official a-hover-opacity"></i>
+    <a href="https://www.instagram.com/alvinp_/"><i class="fa fa-instagram a-hover-opacity"></i></a>
+    <!-- <i class="fa fa-snapchat a-hover-opacity"></i>
+    <i class="fa fa-pinterest-p a-hover-opacity"></i>
+    <i class="fa fa-twitter a-hover-opacity"></i>
+    <i class="fa fa-linkedin a-hover-opacity"></i> -->
+    <!-- <p class="a-medium">Powered by <a href="https://www.aschools.com/acss/default.asp" target="_blank" class="a-hover-text-green">a.css</a></p> -->
+    <p>
+        &copy;
+        <span id="copyright">
+            <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+        </span>
+        , Alvin Pratama
+    </p>
   <!-- End footer -->
   </footer>
   
@@ -233,6 +328,45 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidebar").style.display = "none";
 }
+</script>
+
+<script type="text/javascript">
+  $('body').bind('copy paste',function(e) {
+    e.preventDefault(); return false; 
+  });
+</script>
+
+<script language="JavaScript">
+  /* To Disable Save As */
+  $(document).bind("contextmenu",function(e) {
+   e.preventDefault();
+  });
+  $(document).keydown(function(e){
+      if(e.ctrlKey && (e.which === 83)){
+         e.preventDefault();
+         return false;
+      }
+  });
+</script>
+
+<script type="text/javascript">
+  document.onkeydown = function(e) {
+    if(event.keyCode == 123) {
+       return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+       return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+       return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+       return false;
+    }
+    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+       return false;
+    }
+  }
 </script>
 
 </body>
